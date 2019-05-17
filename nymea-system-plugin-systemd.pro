@@ -1,18 +1,18 @@
 QT -= gui
 QT += dbus
 
-TARGET = nymea_systempluginlogind
+TARGET = nymea_systempluginsystemd
 TEMPLATE = lib
 
 CONFIG += link_pkgconfig c++11
 PKGCONFIG += nymea
 
 SOURCES += \
-    systemcontrollerlogind.cpp
+    systemcontrollersystemd.cpp
 
 
 HEADERS += \
-    systemcontrollerlogind.h
+    systemcontrollersystemd.h
 
 
 target.path = $$[QT_INSTALL_LIBS]/nymea/platform/
