@@ -28,6 +28,8 @@
 class SystemControllerSystemd: public PlatformSystemController
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "io.nymea.PlatformSystemController")
+    Q_INTERFACES(PlatformSystemController)
 public:
     explicit SystemControllerSystemd(QObject *parent = nullptr);
 
@@ -37,7 +39,7 @@ public:
     bool shutdown() override;
 
 private:
-    bool m_canControlPower = false;;
+    bool m_canControlPower = false;
 };
 
 #endif // SYSTEMCONTROLLERSYSTEMD_H
