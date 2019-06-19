@@ -21,11 +21,11 @@
 #include <QDBusInterface>
 #include <QDBusPendingReply>
 
-#include "debiansystemcontroller.h"
+#include "systemcontrollersystemd.h"
 
 #include "loggingcategories.h"
 
-DebianSystemController::DebianSystemController(QObject *parent):
+SystemControllerSystemd::SystemControllerSystemd(QObject *parent):
     PlatformSystemController(parent)
 {
 
@@ -42,12 +42,12 @@ DebianSystemController::DebianSystemController(QObject *parent):
     }
 }
 
-bool DebianSystemController::powerManagementAvailable() const
+bool SystemControllerSystemd::powerManagementAvailable() const
 {
     return m_canControlPower;
 }
 
-bool DebianSystemController::reboot()
+bool SystemControllerSystemd::reboot()
 {
     qCDebug(dcPlatform) << "Rebooting";
     QDBusInterface logind("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
@@ -61,7 +61,7 @@ bool DebianSystemController::reboot()
     return true;
 }
 
-bool DebianSystemController::shutdown()
+bool SystemControllerSystemd::shutdown()
 {
     qCDebug(dcPlatform()) << "Shutting down...";
     QDBusInterface logind("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", QDBusConnection::systemBus());

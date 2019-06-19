@@ -18,18 +18,20 @@
  *                                                                         *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#ifndef DEBIANSYSTEMCONTROLLER_H
-#define DEBIANSYSTEMCONTROLLER_H
+#ifndef SYSTEMCONTROLLERSYSTEMD_H
+#define SYSTEMCONTROLLERSYSTEMD_H
 
 #include <QObject>
 
 #include "platform/platformsystemcontroller.h"
 
-class DebianSystemController : public PlatformSystemController
+class SystemControllerSystemd: public PlatformSystemController
 {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "io.nymea.PlatformSystemController")
+    Q_INTERFACES(PlatformSystemController)
 public:
-    explicit DebianSystemController(QObject *parent = nullptr);
+    explicit SystemControllerSystemd(QObject *parent = nullptr);
 
     bool powerManagementAvailable() const override;
 
@@ -37,7 +39,7 @@ public:
     bool shutdown() override;
 
 private:
-    bool m_canControlPower = false;;
+    bool m_canControlPower = false;
 };
 
-#endif // DEBIANLINUXSYSTEMCONTROLLER_H
+#endif // SYSTEMCONTROLLERSYSTEMD_H
