@@ -4,7 +4,7 @@ QT += dbus
 TARGET = nymea_systempluginsystemd
 TEMPLATE = lib
 
-CONFIG += link_pkgconfig c++11
+CONFIG += plugin link_pkgconfig c++11
 PKGCONFIG += nymea
 
 SOURCES += \
