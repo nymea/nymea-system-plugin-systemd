@@ -3,7 +3,7 @@ nymea-system-plugin-systemd (0.2) xenial; urgency=medium
   [ Michael Zanetti ]
   * Fix configuration to be a plugin, not a lib
 
- -- Jenkins <jenkins@nymea.io>  Thu, 04 Jul 2019 17:21:13 +0200
+ -- Jenkins <jenkins@nymea.io>  Mon, 02 Sep 2019 18:02:27 +0200
 
 nymea-system-plugin-systemd (0.1) xenial; urgency=medium
 
