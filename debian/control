@@ -9,6 +9,7 @@ Build-Depends: debhelper (>= 9.0.0),
                dpkg-dev (>= 1.16.1~),
                libnymea1-dev (>= 0.12),
                qt5-qmake,
+               qt5-default,
                qtbase5-dev,
 
 Package: nymea-system-plugin-systemd
