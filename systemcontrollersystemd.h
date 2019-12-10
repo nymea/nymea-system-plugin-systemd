@@ -38,8 +38,12 @@ public:
     bool reboot() override;
     bool shutdown() override;
 
+    bool timeZoneManagementAvailable() const override;
+    bool setTimeZone(const QTimeZone &timeZone);
+
 private:
     bool m_canControlPower = false;
+    bool m_canControlTimeZone = false;
 };
 
 #endif // SYSTEMCONTROLLERSYSTEMD_H
