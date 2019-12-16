@@ -123,9 +123,9 @@ bool SystemControllerSystemd::automaticTime() const
 bool SystemControllerSystemd::setAutomaticTime(bool automaticTime)
 {
     QDBusInterface timedated("org.freedesktop.timedate1", "/org/freedesktop/timedate1", "org.freedesktop.timedate1", QDBusConnection::systemBus());
-    QDBusPendingReply<> disableNtp = timedated.callWithArgumentList(QDBus::Block, "SetNTP", {automaticTime, false});
-    if (disableNtp.isError()) {
-        qCWarning(dcPlatform()) << "Error disabling NTP:" << disableNtp.error().name() << disableNtp.error().message();
+    QDBusPendingReply<> setNtp = timedated.callWithArgumentList(QDBus::Block, "SetNTP", {automaticTime, false});
+    if (setNtp.isError()) {
+        qCWarning(dcPlatform()) << "Error disabling NTP:" << setNtp.error().name() << setNtp.error().message();
         return false;
     }
     qCDebug(dcPlatform()) << "Automatic time updates" << (automaticTime ? "enabled" : "disabled");
