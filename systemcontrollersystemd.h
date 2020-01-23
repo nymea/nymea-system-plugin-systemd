@@ -38,8 +38,18 @@ public:
     bool reboot() override;
     bool shutdown() override;
 
+    bool timeManagementAvailable() const override;
+    bool setTime(const QDateTime &dateTime) override;
+    bool setTimeZone(const QTimeZone &timeZone) override;
+    bool automaticTimeAvailable() const override;
+    bool automaticTime() const override;
+    bool setAutomaticTime(bool automaticTime);
+
+private slots:
+    void timePropertiesChanged(const QString &interface, const QVariantMap &changedProperties, const QStringList &invalidatedProperties);
 private:
     bool m_canControlPower = false;
+    bool m_canControlTime = false;
 };
 
 #endif // SYSTEMCONTROLLERSYSTEMD_H
