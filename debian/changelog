@@ -1,3 +1,12 @@
+nymea-system-plugin-systemd (0.4) xenial; urgency=medium
+
+  [ Michael Zanetti ]
+  * Support setting the system time zone
+  * Fix building in sbuild
+  * Update copyright
+
+ -- Jenkins <jenkins@nymea.io>  Thu, 23 Jan 2020 13:41:53 +0100
+
 nymea-system-plugin-systemd (0.3) xenial; urgency=medium
 
   [ Michael Zanetti ]
