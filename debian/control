@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9.0.0),
                qt5-qmake,
                qt5-default,
                qtbase5-dev,
-               nymea-system-plugin-api-1,
+               nymea-system-plugin-api-2,
 
 Package: nymea-system-plugin-systemd
 Architecture: any
@@ -20,7 +20,7 @@ Multi-Arch: same
 Depends: libnymea1 (>= 0.13),
          ${misc:Depends},
          systemd,
-         nymea-system-plugin-api-1,
+         nymea-system-plugin-api-2,
 Provides: nymea-system-plugin-impl
 Description: system platform plugin for nymea
  The nymea daemon is a plugin based IoT (Internet of Things) server. The
