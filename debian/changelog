@@ -1,3 +1,10 @@
+nymea-system-plugin-systemd (0.5) xenial; urgency=medium
+
+  [ Michael Zanetti ]
+  * Add support for the new restart method in the system api
+
+ -- Jenkins <jenkins@nymea.io>  Tue, 02 Jun 2020 21:02:49 +0200
+
 nymea-system-plugin-systemd (0.4) xenial; urgency=medium
 
   [ Michael Zanetti ]
