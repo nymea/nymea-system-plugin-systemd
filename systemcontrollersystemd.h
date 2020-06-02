@@ -45,6 +45,7 @@ public:
 
     bool powerManagementAvailable() const override;
 
+    bool restart() override;
     bool reboot() override;
     bool shutdown() override;
 

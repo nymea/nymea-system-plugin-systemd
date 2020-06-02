@@ -60,6 +60,19 @@ bool SystemControllerSystemd::powerManagementAvailable() const
     return m_canControlPower;
 }
 
+bool SystemControllerSystemd::restart()
+{
+    QDBusInterface systemd("org.freedesktop.systemd1", "/org/freedesktop/systemd1/unit/nymead_2eservice", "org.freedesktop.systemd1.Unit", QDBusConnection::systemBus());
+    QDBusPendingReply<> restart = systemd.callWithArgumentList(QDBus::Block, "Restart", {"replace"});
+    restart.waitForFinished();
+    if (restart.isError()) {
+        const auto error = restart.error();
+        qCWarning(dcPlatform()) << "Error restarting nymea:" << error.message();
+    }
+    qCDebug(dcPlatform()) << "Restarting nymea...";
+    return true;
+}
+
 bool SystemControllerSystemd::reboot()
 {
     QDBusInterface logind("org.freedesktop.login1", "/org/freedesktop/login1", "org.freedesktop.login1.Manager", QDBusConnection::systemBus());
@@ -67,7 +80,7 @@ bool SystemControllerSystemd::reboot()
     powerOff.waitForFinished();
     if (powerOff.isError()) {
         const auto error = powerOff.error();
-        qCWarning(dcPlatform) << "Error calling reboot on logind.";
+        qCWarning(dcPlatform) << "Error calling reboot on logind:" << error.message();
         return false;
     }
     qCDebug(dcPlatform) << "Rebooting...";
@@ -80,7 +93,8 @@ bool SystemControllerSystemd::shutdown()
     QDBusPendingReply<> powerOff = logind.callWithArgumentList(QDBus::Block, "PowerOff", {true, });
     powerOff.waitForFinished();
     if (powerOff.isError()) {
-        qCWarning(dcPlatform) << "Error calling poweroff on logind.";
+        const auto error = powerOff.error();
+        qCWarning(dcPlatform) << "Error calling poweroff on logind:" << error.message();
         return false;
     }
     qCDebug(dcPlatform()) << "Shutting down...";
