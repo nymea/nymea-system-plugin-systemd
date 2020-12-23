@@ -1,7 +1,9 @@
-nymea-system-plugin-systemd (0.7) UNRELEASED; urgency=medium
+nymea-system-plugin-systemd (0.7) xenial; urgency=medium
 
+  [ Michael Zanetti ]
+  * No change rebuild against new ABI
 
- -- Michael Zanetti <michael.zanetti@nymea.io>  Wed, 23 Dec 2020 15:13:32 +0100
+ -- Jenkins <jenkins@nymea.io>  Wed, 23 Dec 2020 15:28:07 +0100
 
 nymea-system-plugin-systemd (0.6) xenial; urgency=medium
 
