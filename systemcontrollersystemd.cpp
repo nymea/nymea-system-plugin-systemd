@@ -32,6 +32,7 @@
 #include <QDBusPendingReply>
 #include <QTimeZone>
 #include <QTimer>
+#include <QProcess>
 
 #include "systemcontrollersystemd.h"
 

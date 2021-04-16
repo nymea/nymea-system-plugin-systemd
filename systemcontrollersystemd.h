@@ -54,7 +54,7 @@ public:
     bool setTimeZone(const QTimeZone &timeZone) override;
     bool automaticTimeAvailable() const override;
     bool automaticTime() const override;
-    bool setAutomaticTime(bool automaticTime);
+    bool setAutomaticTime(bool automaticTime) override;
 
 private slots:
     void timePropertiesChanged(const QString &interface, const QVariantMap &changedProperties, const QStringList &invalidatedProperties);
