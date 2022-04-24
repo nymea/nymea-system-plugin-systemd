@@ -1,3 +1,8 @@
+nymea-system-plugin-systemd (1.1.0) jammy; urgency=medium
+
+
+ -- jenkins <developer@nymea.io>  Sun, 24 Apr 2022 19:29:34 +0200
+
 nymea-system-plugin-systemd (1.0.0) xenial; urgency=medium
 
   * 
