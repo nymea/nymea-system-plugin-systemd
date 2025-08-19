@@ -1,3 +1,10 @@
+nymea-system-plugin-systemd (1.13.0) jammy; urgency=medium
+
+  [ Simon Stürz ]
+  * Add Qt6 support
+
+ -- jenkins <developer@nymea.io>  Tue, 19 Aug 2025 10:33:08 +0200
+
 nymea-system-plugin-systemd (1.11.1) jammy; urgency=medium
 
 
