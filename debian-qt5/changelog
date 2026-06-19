@@ -1,3 +1,8 @@
+nymea-system-plugin-systemd (1.15.2) resolute; urgency=medium
+
+
+ -- jenkins <developer@nymea.io>  Fri, 19 Jun 2026 13:37:30 +0200
+
 nymea-system-plugin-systemd (1.15.1) noble; urgency=medium
 
 
